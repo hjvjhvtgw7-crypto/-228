@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: nft-offer-demo
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: OFFER_TTL_HOURS
+        value: "8"
+      - key: DATABASE_PATH
+        value: offers.sqlite3
